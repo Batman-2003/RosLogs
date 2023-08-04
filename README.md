@@ -14,6 +14,8 @@ insert_name
 ### Description : 
 A Potentiometer is used as an analog input device to provide a change in angle , which is read by 
 the arduino and then , arduino sends a transform back to host system using rosserial.
+
+Then, Rviz is used to Visualize these transforms.
 ### Assigner :
 insert_name
 ### Video Demo : 
