@@ -8,6 +8,11 @@ insert_name
 ### Video Demo : 
 [https://youtu.be/0fIQGwLe4IA](https://youtu.be/0fIQGwLe4IA)
 
+
+https://github.com/Batman-2003/RosLogs/assets/98752382/9ab3df39-ba38-4864-86f8-c31be8a30c6b
+
+
+
 ---
 
 ## 1_spinning_in_Rviz
@@ -21,7 +26,10 @@ insert_name
 ### Video Demo : 
 [https://youtu.be/kkGHyzPCwis](https://youtu.be/kkGHyzPCwis)
 
+https://github.com/Batman-2003/RosLogs/assets/98752382/767c9b88-3932-471a-bff9-abbab109da41
+
 ---
+
 
 ## 2_servo_control_gui
 ### Description :
@@ -32,6 +40,14 @@ The same message can be used to control real servo motor as demonstrated in Task
 Dr.Srinivasan 
 ### Video Demo :
 [https://youtu.be/VTv9-uM-Qi8](https://youtu.be/VTv9-uM-Qi8)
+
+
+
+
+https://github.com/Batman-2003/RosLogs/assets/98752382/d0e0eabb-4389-47cc-abe8-de24491b3f60
+
+
+
 
 ---
 
