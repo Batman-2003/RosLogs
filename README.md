@@ -82,6 +82,12 @@ Dr. Vaidehi
   3. Run `catkin_make` in your workspace
   4. cd into scripts sub-directory and then run mainscript.sh
 
+### Further Improvements :
+  -   [x] add color support to `dataTransfer.py`
+  -   [ ] add cuboidal obstacle support
+  -   [ ] add support for python3 in Noetic
+  -   [ ] add support for non-rectilinear paths
+
 
 
 
