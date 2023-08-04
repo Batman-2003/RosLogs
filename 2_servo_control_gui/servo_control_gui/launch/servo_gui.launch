@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+    <param name="robot_description" textfile="$(find servo_control_gui)/description/servo_gui.urdf"/>
+    <node pkg="servo_control_gui" type="main.py" name="gui_application" />
+    <node pkg="rviz" type="rviz" name="rviz" />
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
+
+</launch>
