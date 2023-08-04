@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node pkg="collision_0" type="newer.py" name="newer" />
+
+</launch>

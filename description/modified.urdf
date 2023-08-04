@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+
+<robot name="second_bazu">
+
+<link name="world_link"/>
+
+<link name="base_link">
+    <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <mass value="5.0"/>
+        <inertia ixx="0.024" ixy="0.0" ixz="0.0" iyy="0.024" iyz="0.0" izz="0.041"/>
+    </inertial>
+    <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.5 0.5 0.2"/>
+        </geometry>
+        <material name="grey1">
+            <color rgba="0.2 0.2 0.2 1.0"/>
+            <texture filename=""/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.5 0.5 0.2"/>
+        </geometry>
+    </collision>
+</link>
+
+<link name="rear_arm_link">
+    <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.090" ixy="0.0" ixz="0.0" iyy="0.0835" iyz="0.0" izz="0.0077"/>
+    </inertial>
+    <visual name="rear_arm_link_vis">
+        <origin xyz="0 0 0.5" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.05 0.3 1.0"/>
+        </geometry>
+        <material name="blue1">
+            <color rgba="0.0 0.0 1.0 1.0"/>
+        </material>
+        
+    </visual>
+    <collision>
+        <origin xyz="0 0 0.5" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.05 0.3 1.0"/>
+        </geometry>
+    </collision>
+</link>
+
+<link name="fore_arm_link">
+    <inertial>
+        <origin xyz="0.0 0.0 0" rpy="0.0 0.0 0.0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.090" ixy="0.0" ixz="0.0" iyy="0.0835" iyz="0.0" izz="0.0077"/>
+    </inertial>
+    <visual>
+        <origin xyz="0 0 -0.5" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.05 0.3 1.0"/>
+        </geometry>
+        <material name="blue1">
+            <color rgba="0.0 0.0 1.0 1.0"/>
+        </material>
+        
+    </visual>
+    <collision>
+        <origin xyz="0 0 -0.5" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.05 0.3 1.0"/>
+        </geometry>
+    </collision>
+</link>
+
+<link name="wrist_arm_link">
+    <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <mass value="1.0"/>
+        <inertia ixx="0.090" ixy="0.0" ixz="0.0" iyy="0.0210" iyz="0.0" izz="0.0077"/>
+    </inertial>
+    <visual>
+        <origin xyz="0 0 -0.25" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.05 0.3 0.5"/>
+        </geometry>
+        <material name="blue1">
+            <color rgba="0.0 0.0 1.0 1.0"/>
+        </material>
+        
+    </visual>
+    <collision>
+        <origin xyz="0 0 -0.25" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.05 0.3 0.5"/>
+        </geometry>
+    </collision>
+</link>
+
+<link name="pointer_link">
+    <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <cylinder radius="0.005" length="0.5"/>
+        </geometry>
+        <material name="red1">
+            <color rgba="1.0 0.0 0.0 1.0"/>
+            <texture filename=""/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.0 0.0 0.0"/>
+        </geometry>
+    </collision>
+</link>
+
+<link name="obstacle_link">
+    <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <mass value="0.0"/>
+        <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+    </inertial>
+    <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <cylinder radius='0.2' length='0.8'/>
+        </geometry>
+        <material name="my_color">
+            <color rgba="0.3 0.6 0.3 0.2"/>
+            <texture filename=""/>
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <geometry>
+            <box size="0.0 0.0 0.0"/>
+        </geometry>
+    </collision>
+</link>
+
+<joint name="world_base_joint" type="fixed">
+    <parent link="world_link"/>
+    <child link="base_link"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -1.57"/>
+</joint>
+
+
+<joint name="base_rear_arm_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear_arm_link"/>
+    <axis xyz="0 0 1"/>
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+</joint>
+
+<joint name="rear_arm_fore_arm_joint" type="continuous">
+    <parent link="rear_arm_link"/>
+    <child link="fore_arm_link"/>
+    <axis xyz="1 0 0"/>
+    <origin xyz="0.06 0 1.0" rpy="1.57 0 0"/>
+</joint>
+
+<joint name="fore_arm_wrist_arm_joint" type="continuous">
+    <parent link="fore_arm_link"/>
+    <child link="wrist_arm_link"/>
+    <axis xyz="1 0 0"/>
+    <origin xyz="-0.06 0 -1.0" rpy="0.0 0 0"/>
+</joint>
+
+<joint name="wrist_arm_pointer_joint" type="fixed">
+    <parent link="wrist_arm_link"/>
+    <child link="pointer_link"/>
+    <origin xyz="0.0 0 -0.75" rpy="0.0 0.0 0.0"/>
+</joint>
+
+<joint name="world_obstacle_joint" type="fixed">
+    <parent link="world_link"/>
+    <child link="obstacle_link"/>
+    <origin xyz="1.0 1.0 .40" rpy="0.0 0.0 0.0"/>
+</joint>
+
+<!-- ===============================Gazebo Shiz======================================== -->
+<!-- 
+<transmission name="trans_1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="base_rear_arm_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_1">
+        <mechanicalReduction>1.0</mechanicalReduction>
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </actuator>
+</transmission>
+
+<transmission name="trans_2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rear_arm_fore_arm_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_2">
+        <mechanicalReduction>1.0</mechanicalReduction>
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </actuator>
+</transmission>
+
+<transmission name="trans_3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fore_arm_wrist_arm_joint">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_3">
+        <mechanicalReduction>1.0</mechanicalReduction>
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </actuator>
+</transmission>
+
+<gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"/> 
+</gazebo>
+
+<gazebo reference = "base_link">
+    <material>Gazebo/Black</material>
+</gazebo>
+    
+<gazebo reference = "rear_arm_link">
+    <material>Gazebo/Orange</material>
+</gazebo>
+
+<gazebo reference = "fore_arm_link">
+    <material>Gazebo/Blue</material>
+</gazebo>
+
+<gazebo reference = "wrist_arm_link">
+    <material>Gazebo/Red</material>
+</gazebo> -->
+
+</robot>
