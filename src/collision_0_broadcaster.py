@@ -125,47 +125,6 @@ def iterator_handler():
         it = it - 1
 
 
-# def cylinder_collision_checking(x_space, y_space, RAD_OF_CYL, X_OFFSET, Y_OFFSET):
-#     collision_flag = False
-#     for ind, value in enumerate(zip(x_space,y_space)):
-#         if (value[0] - X_OFFSET)**2 + (value[1] - Y_OFFSET)**2 <= RAD_OF_CYL**2:
-#             collision_flag = True
-#             angle0, angle1, angle2 = getAngle(value[0], value[1])
-#             add_to_sheet(ind, angle0, angle1, angle2, value[0], value[1], "Colliding")
-#         else:
-#             angle0, angle1, angle2 = getAngle(value[0], value[1])
-#             add_to_sheet(ind, angle0, angle1, angle2, value[0], value[1], "All Clear")
-#     return collision_flag
-
-
-# def add_to_sheet(ind, a0, a1, a2, a3, a4, a5):
-#     ws['A{_}'.format(_ = ind + 5)] = a0
-#     ws['B{_}'.format(_ = ind + 5)] = a1
-#     ws['C{_}'.format(_ = ind + 5)] = a2
-#     ws['D{_}'.format(_ = ind + 5)] = a3
-#     ws['E{_}'.format(_ = ind + 5)] = a4
-#     ws['F{_}'.format(_ = ind + 5)] = a5
-#     wb.save("../data_collection/test.xlsx")
-
-
-# def askForPermission(flag):
-#     if flag:
-#         reply = raw_input("There are collision on the given path , still want to proceed ? ( y for yes ) : ")
-#         if reply == "y":
-#             print("OK Proceeding anyways")
-#         else:
-#             sys.exit()
-
-# def getAngle(_x, _y):
-#     ang0 = m.tan(_y / _x)
-#     L = m.sqrt(_x**2 + _y**2)
-#     K = m.sqrt( L**2 +  z**2)
-#     alpha = m.acos((K/2) / 1.0)
-#     gamma = m.atan(K / z)
-#     ang1 = gamma - alpha
-#     ang2 = -2 * alpha
-#     return ang0, ang1, ang2
-
 ##----------------------------------------------------------------------Main Func---------------------------------------------------------------
 wb = openpyxl.load_workbook("../my_ws/src/collision_0/data_collection/test.xlsx")                         ##Modifying the path for roslaunch 
 ws = wb.active
@@ -179,8 +138,6 @@ if __name__ == '__main__':
     paras = read_parameters()
     z = paras[4]
     x,y = path_calculator(paras[0], paras[1], paras[2], paras[3])
-    # safety_flag = cylinder_collision_checking(x, y, paras[5], paras[8], paras[9])
-    # askForPermission(safety_flag)
 
     while not rospy.is_shutdown():
         handle_joint_pose()

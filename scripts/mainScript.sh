@@ -79,5 +79,5 @@ elif [ $shape == "box" ] ; then
 
 
 else
-        echo "Not Valid : returning to last step"
+        echo "Not Valid : returning"
 fi
