@@ -85,8 +85,8 @@ Dr. Vaidehi
 ### Further Improvements :
   -   [x] add color support to `dataTransfer.py`
   -   [ ] add cuboidal obstacle support
-  -   [ ] add support for python3 in Noetic
-  -   [ ] add support for non-rectilinear paths
+  -   [x] add support for python3 in Noetic
+  -   [x] add support for non-rectilinear paths
 
 
 
