@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <param name="robot_description" textfile="$(find task6_0)/description/task6_0.urdf"/>
+    <node name="rviz_gui" pkg="rviz" type="rviz" args="-d $(find task6_0)/rviz_config/rviz.rviz"/>
+    <node name="RSP" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    <!-- <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" /> -->
+    <!-- <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui" /> -->
+    <!-- <node pkg="task6_0" type="finalizedBroadcaster.py" name="finalizedBroadcaster" /> -->
+</launch>
