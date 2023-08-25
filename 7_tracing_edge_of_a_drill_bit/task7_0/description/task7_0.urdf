@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+<robot name="task6_0">
+    <link name="world"/>
+
+    <link name="base_link">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </link>
+
+    <link name="y_axis_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.600 0.1 0.05"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.0 1.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.0 0.0 0.0"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="x_axis_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.05 0.600 0.05"/>
+            </geometry>
+            <material name="red">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.05 0.05 0.300"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="spindle_base_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <sphere radius="0.025"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 1.0 1.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <sphere radius="0.025"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="spindle_nozzle_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.100" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.001" length="0.200"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 0.0 0.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.001" length="0.200"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="spindle_nozzle_end_link">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+        </inertial>
+        <visual name="">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <sphere radius="0.001"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 1.0 1.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <sphere radius="0.005"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <link name="rotor_link">
+        <visual name="">
+            <origin xyz="0.0 0.0 0" rpy="0 1.57 0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.1"/>
+            </geometry>
+            <material name="">
+                <color rgba="1.0 1.0 1.0 1.0"/>
+                <texture filename=""/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.005" length="0.200"/>
+            </geometry>
+        </collision>
+    </link>
+
+<!--======================================================================================================================================================================================= 
+==================================================================================Joints===================================================================================================
+=========================================================================================================================================================================================== -->
+
+
+    <joint name="world_base_joint" type="fixed">
+        <parent link="world"/>
+        <child link="base_link"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <!-- Breaking some rules here, as even though this is only a prismatic joint , we are also giving it a yaw -->
+    <joint name="x_axis_base_link_joint" type="prismatic">
+        <parent link="base_link"/>
+        <child link="x_axis_link"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-0.3" upper="0.3" velocity="0.5" effort="1000.0"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+    
+    <joint name="y_axis_base_joint" type="prismatic">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="y_axis_link"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <limit lower="-0.300" upper="0.300" effort="0.0" velocity="0.0"/>
+    </joint>
+
+    <joint name="base_spindle_base_joint" type="prismatic">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="spindle_base_link"/>
+        <axis xyz="0.0 0.0 1"/>
+        <limit lower="0.0" upper="0.4" effort="0.0" velocity="0.0"/>
+    </joint>
+
+    <joint name="spindle_base_spindle_nozzle_pitch" type="revolute">
+        <parent link="spindle_base_link"/>
+        <child link="spindle_nozzle_link"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-0.7853981630" upper="0.7853981630" velocity="50.0" effort="1000.0"/>
+        <origin xyz="0 0 0" rpy="0 3.1415 0"/>
+    </joint>
+    
+
+    <joint name="spindle_nozzle_end_spindle_nozzle_joint" type="fixed">
+        <parent link="spindle_nozzle_link"/>
+        <child link="spindle_nozzle_end_link"/>
+        <origin xyz="0.0 0.0 0.20" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <joint name="rotor_world" type="revolute">
+        <parent link="x_axis_link"/>
+        <child link="rotor_link"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="0" upper="6.28" velocity="50.0" effort="1000.0"/>
+        <origin xyz="0 0 0.075" rpy="0 0 0"/>
+    </joint>
+
+
+
+
+    <link name="drill_bit">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <visual>
+            <origin xyz="-0.014 -0.014 0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://task7_0/meshes/drill_beat.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.0 0.0 1.0 1.0"/>
+                <texture filename=""/>
+        </material> 
+        </visual> 
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://task7_0/meshes/drill_beat.STL" />
+            </geometry>
+        </collision>      
+    </link>
+
+
+    <joint name="drill_bit_rotor" type="fixed">
+        <parent link="rotor_link"/>
+        <child link="drill_bit"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="0" upper="6.28" velocity="50.0" effort="1000.0"/>
+        <origin xyz="0.05 0 0" rpy="0.0 1.57 0"/>
+    </joint>
+
+</robot>
